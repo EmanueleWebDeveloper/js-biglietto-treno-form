@@ -15,5 +15,5 @@ if( etaPasseggero < 18 ){
     prezzoBiglietto = prezzoBiglietto - ( prezzoBiglietto * 0.4 )
     risultatoHtml.innerHTML = `il prezzo del biglietto è: ${prezzoBiglietto.toFixed(2)}€ con uno sconto del 40% perchè over 65` 
 } else {
-    risultatoHtml = `il prezzo del biglietto è :${prezzoBiglietto.toFixed(2)}€`
+    risultatoHtml.innerHTML = `il prezzo del biglietto è :${prezzoBiglietto.toFixed(2)}€`
 }
