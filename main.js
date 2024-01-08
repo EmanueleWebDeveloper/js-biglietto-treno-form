@@ -1,19 +1,20 @@
-const costoKilometro = 0.21;
+function calcolaPrezzo() {
+    const costoKilometro = 0.21;
+    const risultatoHtml = document.getElementById('risultato');
 
-let numeroKilometri = prompt( "quanti kilometri devi percorrere?" );
-let etaPasseggero = prompt ( "quanti anni ha il passeggero?" );
+    const nomeCognome = document.getElementById('NomeeCognome').value;
+    const numeroKilometri = parseFloat(document.getElementById('numeroKilometri').value);
+    const etaPasseggero = parseInt(document.getElementById('etaPasseggero').value);
 
-const risultatoHtml = document.getElementById(`risultato`);
-console.log ( risultatoHtml )
+    let prezzoBiglietto = costoKilometro * numeroKilometri;
 
-let prezzoBiglietto = costoKilometro * numeroKilometri
-
-if( etaPasseggero < 18 ){
-    prezzoBiglietto = prezzoBiglietto - ( prezzoBiglietto * 0.2 )
-    risultatoHtml.innerHTML = `il prezzo del biglietto è: ${prezzoBiglietto.toFixed(2)}€ con uno sconto del 20% perchè minorenne` 
-} else if ( etaPasseggero >= 65){
-    prezzoBiglietto = prezzoBiglietto - ( prezzoBiglietto * 0.4 )
-    risultatoHtml.innerHTML = `il prezzo del biglietto è: ${prezzoBiglietto.toFixed(2)}€ con uno sconto del 40% perchè over 65` 
-} else {
-    risultatoHtml.innerHTML = `il prezzo del biglietto è :${prezzoBiglietto.toFixed(2)}€`
+    if (etaPasseggero < 18) {
+        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 0.2);
+        risultatoHtml.value = `Ciao ${nomeCognome}, il prezzo del biglietto è: ${prezzoBiglietto.toFixed(2)}€ con uno sconto del 20% perché sei minorenne.`;
+    } else if (etaPasseggero >= 65) {
+        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 0.4);
+        risultatoHtml.value = `Ciao ${nomeCognome}, il prezzo del biglietto è: ${prezzoBiglietto.toFixed(2)}€ con uno sconto del 40% perché sei over 65.`;
+    } else {
+        risultatoHtml.value = `Ciao ${nomeCognome}, il prezzo del biglietto è: ${prezzoBiglietto.toFixed(2)}€.`;
+    }
 }
