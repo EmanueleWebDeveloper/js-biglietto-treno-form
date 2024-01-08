@@ -5,14 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <main>
-        <p id="risultato"></p>
+        <div id="risultato" class="container mt-5">
+            <h1>Calcolo Prezzo Biglietto</h1>
+            <form id="calcoloBigliettoForm">
+                <div class="mb-3">
+                    <label for="NomeeCognome" class="form-label">Nome e Cognome:</label>
+                    <input type="text" class="form-control" id="NomeeCognome" name="NomeeCognome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="KmDaPercorrere" class="form-label">Km Da Percorrere:</label>
+                    <input type="number" class="form-control" id="KmDaPercorrere" name="KmDaPercorrere" required>
+                </div>
+                <div class="mb-3">
+                    <label for="FasciaEtà" class="form-label">Età Passeggero:</label>
+                    <input type="number" class="form-control" id="FasciaEtà" name="FasciaEtà" required>
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-primary" onclick="calcolaPrezzo()">Calcola Prezzo</button>
+                </div>
+                <div class="mb-3">
+                    <label for="risultato" class="form-label">Il Prezzo Totale è:</label>
+                    <input type="text" class="form-control" id="risultato" name="risultato" readonly>
+                </div>
+            </form>
+        </div>
     </main>
     
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
     <script src="./main.js"></script>
 
 </body>
